@@ -4,8 +4,8 @@ void follow_line_until(int time,bool left,int how_often){// time driven after th
     int speed=300;
     bool exit=false;
     int counter=0;
-    while(exit){
-        if(get_create_lcliff_amt()<on_line && left){// if outer left sensor activates
+    while(exit){// does not stop at line because sensor is triggerd more than once per line (change)
+        if(get_create_lcliff_amt()<on_line && left){// if outer left sensor activates 
             counter++;
             if (counter==how_often){// if line-count is reached
                 create_drive_straight(speed);
